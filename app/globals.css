@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* أنيميشن الشريط المتحرك */
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+/* خلفية الموقع - وضوح أصلي كامل بدون أي فلاتر */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  /* حذفنا طبقة اللون البيضاء تماماً لتظهر الصورة الأصلية */
+  background-image: url('/images/site-bg.jpg'); 
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* لضمان بقاء الكروت واضحة فوق الخلفية القوية */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px); /* زدنا التغبيش خلف الكروت فقط لسهولة القراءة */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
